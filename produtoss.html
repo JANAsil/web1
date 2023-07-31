@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>CSS Grid e Flexbox</title>
+  </head>
+  <body>
+  
+  
+  <style>
+  body,
+ul,
+li,
+p {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-size: 1.2rem;
+  font-family: Arial;
+}
+
+body {
+  margin-bottom: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 100px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.header {
+  background: #1d1e20;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li {
+  margin-left: 10px;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px;
+}
+
+/* CSS FLEXBOX 1 */
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.flex > div {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+/* CSS GRID 1 */
+
+.grid1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 800px;
+  padding: 10px;
+  margin: 0 auto;
+  grid-gap: 20px;
+}
+
+.grid1 > div:nth-child(n + 4) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.grid1 > div.anuncio {
+  grid-column: 1;
+  grid-row: 2 / 5;
+  border-top: 10px solid tomato;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .grid1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid1 > div:nth-child(n + 4) {
+    display: block;
+  }
+  .grid1 > div.anuncio {
+    grid-column: auto;
+    grid-row: auto;
+    order: -1;
+  }
+}
+
+/* CSS Grid 2 */
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  grid-gap: 20px;
+  max-width: 800px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.sidebar > div {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: flex;
+    overflow: scroll;
+  }
+  .sidebar > div {
+    flex: 1 0 200px;
+    margin: 0 10px;
+  }
+}
+
+
+
+  
+  </style>
+
+    <header class="header">
+      <a href="/"><img src="" /></a>
+      <nav>
+        <ul class="menu">
+          <li><a href="/">Sobre</a></li>
+          <li><a href="/">Produtos</a></li>
+          <li><a href="/">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <h1>Camisetas</h1>
+
+    <section class="flex">
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+    </section>
+
+    <h1>Calças</h1>
+
+    <section class="grid1">
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div>
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Legenda</p>
+      </div>
+      <div class="anuncio">
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <p>Anúncio</p>
+      </div>
+    </section>
+
+    <h1>Jaquetas</h1>
+
+    <section class="grid2">
+      <div class="video">
+        <img src="https://clipground.com/images/camisetas-png-20.png">
+        <h2>Como criar sites.</h2>
+      </div>
+      <div class="sidebar">
+        <div>
+          <img src="https://clipground.com/images/camisetas-png-20.png">
+          <p>Legenda</p>
+        </div>
+        <div>
+          <img src="https://clipground.com/images/camisetas-png-20.png">
+          <p>Legenda</p>
+        </div>
+        <div>
+          <img src="https://clipground.com/images/camisetas-png-20.png">
+          <p>Legenda</p>
+        </div>
+        <div>
+          <img src="https://clipground.com/images/camisetas-png-20.png">
+          <p>Legenda</p>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
